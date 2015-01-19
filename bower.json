@@ -1,0 +1,27 @@
+{
+  "name": "personal-site",
+  "version": "0.0.1",
+  "homepage": "https://github.com/YurkaninRyan",
+  "authors": [
+    "Ryan Yurkanin<yurkaninryan@gmail.com>"
+  ],
+  "description": "My personal website.",
+  "main": "index.js",
+  "keywords": [
+    "webdev",
+    "ryan",
+    "yurkanin",
+    "kittens"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}
