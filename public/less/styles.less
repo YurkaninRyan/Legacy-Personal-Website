@@ -1,7 +1,7 @@
 //Variables\\
 @raspberry-mocha: #7f3119;
 
-//Less Mix-ins\\
+//Mix-ins\\
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @direction: normal) {
 	-webkit-animation: @name @duration @delay @ease @direction;
 	-moz-animation:    @name @duration @delay @ease @direction;
@@ -36,10 +36,27 @@
   .background-clip(padding-box);
 }
 
+.font(@color: black, @family, @size: 12px, @weight: 100, @space: 0px) {
+  color:           @color;
+  font-family:     @family;
+  font-size:       @size;
+  font-weight:     @weight;
+  letter-spacing:  @space;
+}
+
 .opacity (@opacity: 0.5) {
   -webkit-opacity:  @opacity;
   -moz-opacity:     @opacity;
   opacity: 		    @opacity;
+}
+
+.perspective (@perspective, @origin) {
+  -webkit-perspective: @perspective;
+  -moz-perspective:    @perspective;
+  perspective:         @perspective;
+  -webkit-perspective-origin:  @origin;
+  -moz-perspective-origin:     @origin;
+  pespective-origin:           @origin;
 }
 
 .transform (@string){
@@ -96,7 +113,7 @@ html {
   padding: 0;
   width: 100%;
   
-  .loaded{
+  body {
     height: 100%;
     margin: 0;
     width: 100%;
@@ -128,13 +145,9 @@ html {
           .opacity(0);
           position: absolute;
           top: 5px;
-          left: 5px;
+          left: 3px;
           margin: 0;
-          color: white;
-          font-family: 'Open Sans Condensed', sans-serif;
-          font-weight: 300;
-          font-size: 64px;
-          letter-spacing: 3px;
+          .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
           text-align: center;
           .animation(fadeIn, 1s, 3s, ease-in, forwards);
           text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
@@ -153,45 +166,28 @@ html {
           #design {
             .opacity(0);
             margin: 0;
-            color: white;
-            font-family: 'Open Sans Condensed', sans-serif;
-            font-weight: 300;
-            font-size: 42px;
-            letter-spacing: 2px;
+            .font(white, ~"'Open Sans Condensed', sans-serif", 42px, 200, 2px);
             .animation(fadeIn, 1.5s, 4.5s, ease-in 1, forwards);
           }
 
           .slash {
             .opacity(0);
             margin: 0;
-            color: white;
-            font-family: 'Open Sans Condensed', sans-serif;
-            font-weight: 300;
-            font-size: 42px;
-            letter-spacing: 2px;
+            .font(white, ~"'Open Sans Condensed', sans-serif", 42px, 200, 2px);
             .animation(fadeIn, 2s, 3s, ease-in 1, forwards);
           }
 
           #code {
             .opacity(0);
             margin: 0;
-            color: white;
-            font-family: 'Open Sans Condensed', sans-serif;
-            font-weight: 300;
-            font-size: 42px;
-            letter-spacing: 2px;
+            .font(white, ~"'Open Sans Condensed', sans-serif", 42px, 200, 2px);
             .animation(fadeIn, 1.5s, 5.5s, ease-in 1, forwards);
           }
 
           #build {
             .opacity(0);
             margin: 0;
-            color: white;
-            font-family: 'Open Sans Condensed', sans-serif;
-            font-weight: 300;
-            font-size: 42px;
-            letter-spacing: 2px;
-            
+            .font(white, ~"'Open Sans Condensed', sans-serif", 42px, 200, 2px);
             .animation(fadeIn, 1.5s, 6.5s, ease-in 1, forwards);
           }
         }
@@ -199,8 +195,7 @@ html {
           height: 100%;
           overflow: hidden;
           position: absolute;
-          perspective-origin: center;
-          perspective: 1800px;
+          .perspective(1800px, center);
           top: 0;
           width: 100%;
           
@@ -214,7 +209,7 @@ html {
             -webkit-animation-timing-function: linear, ease-in-out;
             top: 35%; 
             left: 22%; 
-            -webkit-animation-delay: 1.2s
+            -webkit-animation-delay: 1.2s;
           }
         }
       }

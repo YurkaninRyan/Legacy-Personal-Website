@@ -30,5 +30,8 @@
     "gulp-util": "^3.0.2",
     "material-ui": "^0.5.0",
     "react": "^0.12.2"
+  },
+  "devDependencies": {
+    "gulp-connect": "^2.2.0"
   }
 }
