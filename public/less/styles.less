@@ -1,26 +1,94 @@
-@white: #fff;
+//Variables\\
 @raspberry-mocha: #7f3119;
 
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+//Less Mix-ins\\
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @direction: normal) {
+	-webkit-animation: @name @duration @delay @ease @direction;
+	-moz-animation:    @name @duration @delay @ease @direction;
+	-ms-animation:     @name @duration @delay @ease @direction;
+}
+
+.animation-timing-function (@function: ease) {
+  -webkit-animation-timing-function:  @function;
+  -moz-animation-timing-function:     @function;
+  animation-timing-function:          @function;
+}
+
+.background-clip (@argument: padding-box) {
+  -moz-background-clip:    @argument;
+  -webkit-background-clip: @argument;
+  background-clip:         @argument;
+}
+
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  .background-clip(padding-box);
+}
+
+.opacity (@opacity: 0.5) {
+  -webkit-opacity:  @opacity;
+  -moz-opacity:     @opacity;
+  opacity: 		    @opacity;
+}
+
+.transform (@string){
+  -webkit-transform:  @string;
+  -moz-transform: 	  @string;
+  -ms-transform: 	  @string;
+  -o-transform: 	  @string;
+}
+
+//Keyframes\\
+@-webkit-keyframes fadeIn { from { .opacity(0); } to { .opacity(1); } }
+@-moz-keyframes fadeIn { from { .opacity(0); } to { .opacity(1); } }
+@keyframes fadeIn { from { .opacity(0); } to { .opacity(1); } }
+
 @-webkit-keyframes sway { 
-  0% { -webkit-transform: rotateZ(-15deg) rotateX(70deg);  }
-  30% { -webkit-transform: rotateZ(20deg) rotateX(60deg); -webkit-animation-timing-function: ease-in-out; }
-  60% { -webkit-transform: rotateZ(-20deg) rotateX(55deg); -webkit-animation-timing-function: ease-in-out;  }
-  100% { -webkit-transform: rotateZ(0deg) rotateX(58deg);-webkit-animation-timing-function: cubic-bezier(0.990, 0.000, 0.890, 0.435);  }
+  0% { .transform(rotateZ(-15deg) rotateX(70deg));  }
+  30% { .transform(rotateZ(20deg) rotateX(60deg)); .animation-timing-function(ease-in-out); }
+  60% { .transform(rotateZ(-20deg) rotateX(55deg)); .animation-timing-function(ease-in-out);  }
+  100% { .transform(rotateZ(0deg) rotateX(58deg)); .animation-timing-function(cubic-bezier(0.990, 0.000, 0.890, 0.435));  }
+}
+@-moz-keyframes sway { 
+  0% { .transform(rotateZ(-15deg) rotateX(70deg));  }
+  30% { .transform(rotateZ(20deg) rotateX(60deg)); .animation-timing-function(ease-in-out); }
+  60% { .transform(rotateZ(-20deg) rotateX(55deg)); .animation-timing-function(ease-in-out);  }
+  100% { .transform(rotateZ(0deg) rotateX(58deg)); .animation-timing-function(cubic-bezier(0.990, 0.000, 0.890, 0.435));  }
+}
+@keyframes sway { 
+  0% { .transform(rotateZ(-15deg) rotateX(70deg));  }
+  30% { .transform(rotateZ(20deg) rotateX(60deg)); .animation-timing-function(ease-in-out); }
+  60% { .transform(rotateZ(-20deg) rotateX(55deg)); .animation-timing-function(ease-in-out);  }
+  100% { .transform(rotateZ(0deg) rotateX(58deg)); .animation-timing-function(cubic-bezier(0.990, 0.000, 0.890, 0.435));  }
 }
 
 @-webkit-keyframes fall { 
   60% { -webkit-filter: drop-shadow(0px 60px 40px rgba(0,0,0,0)); }
-  100% { margin-top: 500px; 
-  -webkit-filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6)); }
+  100% { margin-top: 500px; -webkit-filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6)); }
 }
 
-.container {
-    -webkit-transform: translateZ(0);
+@-moz-keyframes fall { 
+  60% { -moz-filter: drop-shadow(0px 60px 40px rgba(0,0,0,0)); }
+  100% { margin-top: 500px; -moz-filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6)); }
 }
 
+@keyframes fall { 
+  60% { filter: drop-shadow(0px 60px 40px rgba(0,0,0,0)); }
+  100% { margin-top: 500px; filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6)); }
+}
+
+//Styling\\
 html {
   height: 100%;
   margin: 0;
@@ -28,7 +96,7 @@ html {
   padding: 0;
   width: 100%;
   
-  body{
+  .loaded{
     height: 100%;
     margin: 0;
     width: 100%;
@@ -40,7 +108,7 @@ html {
       
       #splash-bg {
         background: url(../img/splash-bg.jpg);
-        background-color: @white;
+        background-color: white;
         background-position: center center;
         background-size: cover;
         height: 100%;
@@ -48,55 +116,31 @@ html {
         width: 100%;
         
         #text-container {
-          opacity: 0;
           width: 330px;
           height: 150px;
           background-color: black;
-          
-          -webkit-animation:fadeIn ease-in 0.5;  
-          -moz-animation:fadeIn ease-in 0.5;
-          animation:fadeIn ease-in 0.5;
-          
-          -webkit-animation-fill-mode:forwards;  
-          -moz-animation-fill-mode:forwards;
-          animation-fill-mode:forwards;
-          
-          -webkit-animation-duration:1s;
-          -moz-animation-duration:1s;
-          animation-duration:1s;
-
-          -webkit-animation-delay: 3s;
-          -moz-animation-delay: 3s;
-          animation-delay: 3s;
+          .opacity(0);
+          .border-radius(0px, 10px, 0px, 0px);
+          .animation(fadeIn, 1s, 3.5s, ease-in 0.5, forwards);  
         }
           
         h1 {
-          opacity: 0;
+          .opacity(0);
           position: absolute;
           top: 5px;
           left: 5px;
           margin: 0;
-          color: @white;
+          color: white;
           font-family: 'Open Sans Condensed', sans-serif;
           font-weight: 300;
           font-size: 64px;
           letter-spacing: 3px;
           text-align: center;
-          -webkit-animation:fadeIn ease-in 1;  
-          -moz-animation:fadeIn ease-in 1;
-          animation:fadeIn ease-in 1;
-
-          -webkit-animation-fill-mode:forwards;  
-          -moz-animation-fill-mode:forwards;
-          animation-fill-mode:forwards;
-
-          -webkit-animation-duration:1s;
-          -moz-animation-duration:1s;
-          animation-duration:1s;
-
-          -webkit-animation-delay: 3s;
-          -moz-animation-delay: 3s;
-          animation-delay: 3s;
+          .animation(fadeIn, 1s, 3s, ease-in, forwards);
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility;
 
         }
 
@@ -104,111 +148,51 @@ html {
           position: absolute;
           top: 87px;
           left: 5px;
-          /*top: 50%;
-          transform: translateY(-50%);*/
           margin: 0;
-          //text-align: center;
 
           #design {
+            .opacity(0);
             margin: 0;
-            color: @white;
+            color: white;
             font-family: 'Open Sans Condensed', sans-serif;
             font-weight: 300;
             font-size: 42px;
             letter-spacing: 2px;
-            opacity: 0;
-            -webkit-animation:fadeIn ease-in 1;  
-            -moz-animation:fadeIn ease-in 1;
-            animation:fadeIn ease-in 1;
-
-            -webkit-animation-fill-mode:forwards;  
-            -moz-animation-fill-mode:forwards;
-            animation-fill-mode:forwards;
-
-            -webkit-animation-duration:1.5s;
-            -moz-animation-duration:1.5s;
-            animation-duration:1.5s;
-
-            -webkit-animation-delay: 4.5s;
-            -moz-animation-delay: 4.5s;
-            animation-delay: 4.5s; 
+            .animation(fadeIn, 1.5s, 4.5s, ease-in 1, forwards);
           }
 
           .slash {
+            .opacity(0);
             margin: 0;
-            color: @white;
+            color: white;
             font-family: 'Open Sans Condensed', sans-serif;
             font-weight: 300;
             font-size: 42px;
             letter-spacing: 2px;
-            opacity: 0;
-            -webkit-animation:fadeIn ease-in 1;  
-            -moz-animation:fadeIn ease-in 1;
-            animation:fadeIn ease-in 1;
-
-            -webkit-animation-fill-mode:forwards;  
-            -moz-animation-fill-mode:forwards;
-            animation-fill-mode:forwards;
-
-            -webkit-animation-duration:2s;
-            -moz-animation-duration:2s;
-            animation-duration:2s;
-
-            -webkit-animation-delay: 3s;
-            -moz-animation-delay: 3s;
-            animation-delay: 3s;
+            .animation(fadeIn, 2s, 3s, ease-in 1, forwards);
           }
 
           #code {
+            .opacity(0);
             margin: 0;
-            color: @white;
+            color: white;
             font-family: 'Open Sans Condensed', sans-serif;
             font-weight: 300;
             font-size: 42px;
             letter-spacing: 2px;
-            opacity: 0;
-             
-            -webkit-animation:fadeIn ease-in 1;  
-            -moz-animation:fadeIn ease-in 1;
-            animation:fadeIn ease-in 1;
-
-            -webkit-animation-fill-mode:forwards;  
-            -moz-animation-fill-mode:forwards;
-            animation-fill-mode:forwards;
-
-            -webkit-animation-duration:1.5s;
-            -moz-animation-duration:1.5s;
-            animation-duration:1.5s;
-
-            -webkit-animation-delay: 5.5s;
-            -moz-animation-delay: 5.5s;
-            animation-delay: 5.5s;
+            .animation(fadeIn, 1.5s, 5.5s, ease-in 1, forwards);
           }
 
           #build {
+            .opacity(0);
             margin: 0;
-            color: @white;
+            color: white;
             font-family: 'Open Sans Condensed', sans-serif;
             font-weight: 300;
             font-size: 42px;
             letter-spacing: 2px;
-            opacity: 0;
             
-            -webkit-animation:fadeIn ease-in 1;  
-            -moz-animation:fadeIn ease-in 1;
-            animation:fadeIn ease-in 1;
-
-            -webkit-animation-fill-mode:forwards;  
-            -moz-animation-fill-mode:forwards;
-            animation-fill-mode:forwards;
-
-            -webkit-animation-duration:1.5s;
-            -moz-animation-duration:1.5s;
-            animation-duration:1.5s;
-
-            -webkit-animation-delay: 6.5s;
-            -moz-animation-delay: 6.5s;
-            animation-delay: 6.5s; 
+            .animation(fadeIn, 1.5s, 6.5s, ease-in 1, forwards);
           }
         }
         #leaf-frame {
@@ -236,4 +220,8 @@ html {
       }
     }
   }
+}
+
+.container {
+    -webkit-transform: translateZ(0);
 }

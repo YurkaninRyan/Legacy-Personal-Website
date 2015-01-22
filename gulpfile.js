@@ -10,6 +10,6 @@ gulp.task('less', function() {
     // Builds the CSS
     gulp.src(['public/less/styles.less'])
         .pipe(less().on('error',util.log))
-        .pipe(minifyCSS())
+        //.pipe(minifyCSS())
         .pipe(gulp.dest('public/css'));
 });
