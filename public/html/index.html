@@ -5,8 +5,16 @@
     <meta charset="utf-8">
     <title>Ryan Yurkanin|Developer</title>
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    
+    
+    <script src="../js/wow.js"></script>
+    <script>
+      new WOW().init();
+    </script>
   </head>
   <body>
     <!--TODO: This section has to make them not want to leave pls-->
@@ -25,18 +33,43 @@
     </section>
     <!--TODO: This section will list information about me-->
     <section id="about">
-      <p>I am a Senior at Temple University with a passion for all things computer related.
-         Taking things apart and putting them back together is what I live for.
-      </p>
+      <div id="abouttitle" class="wow fadeIn">
+        <h1>Let me introduce myself.</h1>
+      </div>
+      <div id="aboutcontent" class="container-fluid">
+        <div id="blurb-row-1" class="row row-centered">
+          <div id="me" class="col-xs-2 col-centered wow zoomInUp"></div>
+        </div>
+        <div id="blurb-row-2" class="row row-centered">
+          <div id="blurb1" class="col-xs-1 col-centered wow fadeInLeft">
+            <p>I am a 23 year old computer scientist with a tendency to take hardware apart, 
+              build software that makes my life easier, and drink a border-line dangerous amount
+              of coffee.
+            </p>
+          </div>
+          <div id="blurb2" class="col-xs-2 col-centered wow bounceInUp">
+            <p>I can typically be found in the ACM Office, shooting the breeze with my fellow
+               ACM/TUDev brothers, looking for a new technology to dive head first into, or praising the sun. \[T]/  
+            </p>
+          </div>
+          <div id="blurb3" class="col-xs-3 col-centered wow fadeInRight">
+            <p>I love being out of my league.  If you happen to see me at a hackathon, please feel free to
+            grab me and show-off your best skill.  I would love to learn from you!</p>
+          </div>
+        </div>
+      </div>
     </section>
     <!--TODO: This section will list all the hackathons I have attended, with the projects that I worked on-->
     <section id="hackathons">
+      <p>This is some sample text</p>
     </section>
     <!--TODO: This section will hold my interactive resume-->
     <section id="resume">
+      <p>This is some sample text</p>
     </section>
     <!--TODO: This section does the obvious, duh.-->
     <section id="contact">
+      <p>This is some sample text</p>
     </section>
   </body>
 </html>

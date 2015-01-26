@@ -1,5 +1,9 @@
 //Variables\\
 @raspberry-mocha: #7f3119;
+@vivid-orange: #fc8f02;
+@vivid-yellow: #fccd02;
+@dark-orange: darken(@vivid-orange, 10%);
+@dark-yellow: darken(@vivid-yellow, 10%);
 
 //Mix-ins\\
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @direction: normal) {
@@ -7,6 +11,19 @@
 	-moz-animation:    @name @duration @delay @ease @direction;
 	-ms-animation:     @name @duration @delay @ease @direction;
 }
+
+.animation-duration (@duration) {
+    -webkit-animation-duration: @duration;
+	-moz-animation-duration:    @duration;
+	-ms-animation-duration:     @duration;
+}
+
+.animation-delay (@delay) {
+    -webkit-animation-duration: @delay;
+	-moz-animation-duration:    @delay;
+	-ms-animation-duration:     @delay;
+}
+
 
 .animation-timing-function (@function: ease) {
   -webkit-animation-timing-function:  @function;
@@ -214,9 +231,128 @@ html {
         }
       }
     }
+    
+    #about {
+      margin: 0;
+      width: 100%;
+      padding: 25px 20px;
+      text-align: center;
+      background-color: darken(white, 5%);
+      
+      #abouttitle {
+        height: 10%;
+        margin-bottom: 30px;
+        .animation-duration(2s);
+        
+        h1 {
+          //opacity: 0;
+          .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
+          color: @dark-orange;
+          //.animation(fadeIn, 1s, .5s, ease-in 1, forwards);
+        }
+      }
+      
+      #aboutcontent {
+        .font(white, ~"'Open Sans Condensed', sans-serif", 26px, 200, 1px);
+        height: 90%;
+        
+        #me {
+          background-image: url("../img/reallyhandsomeguy.jpg");
+          background-position: center;
+          background-repeat:no-repeat;
+          background-size: cover;
+          .border-radius(60px, 60px, 60px, 10px);
+          height: 200px;
+          width:  200px;
+          margin: 20px;
+          .animation-duration(1.5s);
+  
+        }
+        
+        #blurb1 {
+          vertical-align: top;
+          width: 30%;
+          .border-radius(10px, 10px, 10px, 10px);
+          background-color: @vivid-orange;
+          margin: 5px;
+          text-align: left;
+          padding: 15px;
+          .animation-duration(1.5s);
+          .animation-delay(.5s);
+        }
+        
+        #blurb2 {
+          vertical-align: top;
+          width: 30%;
+          .border-radius(10px, 10px, 10px, 10px);
+          background-color: darken(@vivid-orange, 5%);
+          margin: 5px;
+          text-align: left;
+          padding: 15px;
+          .animation-duration(1.5s);
+          .animation-delay(1s);
+        }
+        
+        #blurb3 {
+          vertical-align: top;
+          width: 30%;
+          .border-radius(10px, 10px, 10px, 10px);
+          background-color: darken(@vivid-orange, 11%);
+          margin: 5px;
+          text-align: left;
+          padding: 15px;
+          .animation-duration(1.5s);
+          .animation-delay(1.5s);
+        }
+      }
+    }
+    
+    #hackathons {
+      margin: 0;
+      width: 100%;
+      
+      p {
+        .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
+        color: @dark-yellow;
+        text-align: center;
+      }
+    }
+    
+    #resume {
+      margin: 0;
+      width: 100%;
+      
+      p {
+        .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
+        color: @vivid-orange;
+        text-align: center;
+      }
+    }
+    
+    #contact {
+      margin: 0;
+      width: 100%;
+      
+      p {
+        .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
+        color: @vivid-yellow;
+        text-align: center;
+      }
+    }
   }
 }
 
 .container {
     -webkit-transform: translateZ(0);
 }
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    text-align:left;
+    margin-right:-4px;
+}
+
