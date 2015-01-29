@@ -2,6 +2,8 @@
 @raspberry-mocha: #7f3119;
 @vivid-orange: #fc8f02;
 @vivid-yellow: #fccd02;
+@smoke-white: #eee;
+@smokier-white: darken(#eee, 2%);
 @dark-orange: darken(@vivid-orange, 10%);
 @dark-yellow: darken(@vivid-yellow, 10%);
 @pennappsblue: #2daae0;
@@ -61,6 +63,15 @@
   font-size:       @size;
   font-weight:     @weight;
   letter-spacing:  @space;
+}
+
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
 }
 
 .opacity (@opacity: 0.5) {
@@ -369,6 +380,7 @@ html {
       margin: 0;
       width: 100%;
       padding: 0px 10px;
+      background-color: @smokier-white;
       
       p {
         .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
@@ -386,7 +398,12 @@ html {
           text-align: center;
           width: 100%;
           .border-radius(15px, 10px, 10px, 15px);
-          margin-bottom: 10px;
+          max-width: 300px;
+          margin: 5px;
+          
+          @media (max-width: 639px) {
+            margin-bottom: 10px;
+          }
         
           img {
             width: 100%;
@@ -394,7 +411,7 @@ html {
         }
         
         #codeforgood {
-          background-color: @vivid-orange;
+          .gradient(darken(@vivid-orange, 5%), @vivid-orange);
         }
           
         #hackrpi {
