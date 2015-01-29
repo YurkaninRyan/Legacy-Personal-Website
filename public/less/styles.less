@@ -143,11 +143,16 @@ html {
       #splash-bg {
         background: url(../img/splash-bg.jpg);
         background-color: white;
-        background-position: center center;
+        background-position: center;
         background-size: cover;
+        background-repeat: no-repeat;
         height: 100%;
-        position: relative;
+        //position: relative;
         width: 100%;
+        
+        @media (max-width: 450px) {
+            background-position: right;
+          }
         
         #text-container {
           width: 330px;
@@ -156,6 +161,11 @@ html {
           .opacity(0);
           .border-radius(0px, 10px, 0px, 0px);
           .animation(fadeIn, 1s, 3.5s, ease-in 0.5, forwards);  
+          
+          @media (max-width: 450px) {
+            height: 120px;
+            width: 100%;
+          }
         }
           
         h1 {
@@ -171,6 +181,13 @@ html {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
           text-rendering: optimizeLegibility;
+          
+          @media (max-width: 450px) {
+            left: initial;
+            font-size: 50px;
+            width: 100%;
+            top: 2px;
+          }
 
         }
 
@@ -179,32 +196,37 @@ html {
           top: 87px;
           left: 5px;
           margin: 0;
+          .font(white, ~"'Open Sans Condensed', sans-serif", 42px, 200, 2px);
+          
+          @media (max-width: 450px) {
+            top: 60px;
+            width: 100%;
+            font-size: 40px;
+            left: initial;
+            text-align: center;
+          }
 
           #design {
             .opacity(0);
             margin: 0;
-            .font(white, ~"'Open Sans Condensed', sans-serif", 42px, 200, 2px);
             .animation(fadeIn, 1.5s, 4.5s, ease-in 1, forwards);
           }
 
           .slash {
             .opacity(0);
             margin: 0;
-            .font(white, ~"'Open Sans Condensed', sans-serif", 42px, 200, 2px);
             .animation(fadeIn, 2s, 3s, ease-in 1, forwards);
           }
 
           #code {
             .opacity(0);
             margin: 0;
-            .font(white, ~"'Open Sans Condensed', sans-serif", 42px, 200, 2px);
             .animation(fadeIn, 1.5s, 5.5s, ease-in 1, forwards);
           }
 
           #build {
             .opacity(0);
             margin: 0;
-            .font(white, ~"'Open Sans Condensed', sans-serif", 42px, 200, 2px);
             .animation(fadeIn, 1.5s, 6.5s, ease-in 1, forwards);
           }
         }
@@ -227,6 +249,16 @@ html {
             top: 35%; 
             left: 22%; 
             -webkit-animation-delay: 1.2s;
+            
+            @media (max-height: 570px){
+              top: 27%;
+              left: 35%;
+            }
+            
+            @media (max-height: 485px){
+              top: 18%;
+              left: 35%;
+            }
           }
         }
       }
