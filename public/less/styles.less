@@ -4,6 +4,8 @@
 @vivid-yellow: #fccd02;
 @dark-orange: darken(@vivid-orange, 10%);
 @dark-yellow: darken(@vivid-yellow, 10%);
+@pennappsblue: #2daae0;
+@hackrpiblack: #343433;
 
 //Mix-ins\\
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @direction: normal) {
@@ -366,11 +368,42 @@ html {
     #hackathons {
       margin: 0;
       width: 100%;
+      padding: 0px 10px;
       
       p {
         .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
         color: @dark-yellow;
         text-align: center;
+      }
+      
+      .hackathon-row {
+        text-align: center;
+        width: 100%;
+        
+        .hackathon {
+          display: inline-block;
+          padding: 10px 20px;
+          text-align: center;
+          width: 100%;
+          .border-radius(15px, 10px, 10px, 15px);
+          margin-bottom: 10px;
+        
+          img {
+            width: 100%;
+          }
+        }
+        
+        #codeforgood {
+          background-color: @vivid-orange;
+        }
+          
+        #hackrpi {
+          background-color: @hackrpiblack; 
+        }
+
+        #pennapps {
+          background-color: darken(@pennappsblue, 20%);
+        }  
       }
     }
     
