@@ -151,7 +151,7 @@ html {
         width: 100%;
         
         @media (max-width: 450px) {
-            background-position: right;
+            background-position: 100% 50%;
           }
         
         #text-container {
@@ -252,7 +252,7 @@ html {
             
             @media (max-height: 570px){
               top: 27%;
-              left: 35%;
+              left: 40%;
             }
             
             @media (max-height: 485px){
@@ -271,22 +271,23 @@ html {
       text-align: center;
       background-color: darken(white, 5%);
       
+      @media(max-width: 639px) {
+        padding: 20px 10px;
+      }
+      
       #abouttitle {
-        height: 10%;
         margin-bottom: 30px;
         .animation-duration(2s);
         
         h1 {
-          //opacity: 0;
           .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
           color: @dark-orange;
-          //.animation(fadeIn, 1s, .5s, ease-in 1, forwards);
         }
       }
       
       #aboutcontent {
         .font(white, ~"'Open Sans Condensed', sans-serif", 26px, 200, 1px);
-        height: 90%;
+        width: 100%;
         
         #me {
           background-image: url("../img/reallyhandsomeguy.jpg");
@@ -296,14 +297,14 @@ html {
           .border-radius(60px, 60px, 60px, 10px);
           height: 200px;
           width:  200px;
-          margin: 20px;
+          margin: 20px 0px;
           .animation-duration(1.5s);
   
         }
         
         #blurb1 {
           vertical-align: top;
-          width: 30%;
+          min-width: 286px;
           .border-radius(10px, 10px, 10px, 10px);
           background-color: @vivid-orange;
           margin: 5px;
@@ -311,11 +312,19 @@ html {
           padding: 15px;
           .animation-duration(1.5s);
           .animation-delay(.5s);
+          
+          @media(max-width: 639px) {
+            min-width: 0;
+            width: 95%;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 10px;
+          }
         }
         
         #blurb2 {
           vertical-align: top;
-          width: 30%;
+          min-width: 286px;
           .border-radius(10px, 10px, 10px, 10px);
           background-color: darken(@vivid-orange, 5%);
           margin: 5px;
@@ -323,11 +332,19 @@ html {
           padding: 15px;
           .animation-duration(1.5s);
           .animation-delay(1s);
+          
+          @media(max-width: 639px) {
+            min-width: 0px;
+            width: 95%;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 10px;
+          }
         }
         
         #blurb3 {
           vertical-align: top;
-          width: 30%;
+          min-width: 286px;
           .border-radius(10px, 10px, 10px, 10px);
           background-color: darken(@vivid-orange, 11%);
           margin: 5px;
@@ -335,6 +352,13 @@ html {
           padding: 15px;
           .animation-duration(1.5s);
           .animation-delay(1.5s);
+          
+          @media(max-width: 639px) {
+            min-width: 0px;
+            width: 95%;
+            padding-left: 10px;
+            padding-right: 10px;
+          }
         }
       }
     }
