@@ -139,7 +139,6 @@
 html {
   height: 100%;
   margin: 0;
-  overflow: hidden;
   padding: 0;
   width: 100%;
   
@@ -152,6 +151,7 @@ html {
       height: 100%;
       margin: 0;
       width: 100%;
+      overflow: hidden;
       
       #splash-bg {
         background: url(../img/splash-bg.jpg);
@@ -166,6 +166,39 @@ html {
             background-position: 100% 50%;
           }
         
+        #navdown {
+          .opacity(0);
+          .animation(fadeIn, 1s, 3.5s, ease-in 1, forwards);
+          width: 100%;
+          height: 100px;
+          text-align: right;
+          font-size: 85px;
+          position: absolute;
+          bottom: 100px;
+          right: 150px;
+          padding-bottom: 10px;
+          font-weight: 100;
+          
+          @media (max-width: 999px) {
+            right: 100px; 
+          }
+          
+          @media (max-width: 700px) {
+            right: 20px; 
+          }
+          
+          @media (max-width: 450px) {
+            bottom: 75px;
+            text-align: center;
+            font-size: 50px;
+            right: initial;
+          }
+          
+          .navb {
+            color: white;
+          }
+        }
+        
         #text-container {
           width: 330px;
           height: 150px;
@@ -175,7 +208,7 @@ html {
           .animation(fadeIn, 1s, 3.5s, ease-in 0.5, forwards);
           
           @media (max-width: 450px) {
-            height: 120px;
+            height: 100px;
             width: 100%;
           }
           
@@ -191,11 +224,10 @@ html {
             height: 75px;
             background-color: black;
             .opacity(0);
-            .border-radius(0px, 10px, 0px, 0px);
-            .animation(fadeIn, 1s, .5s, ease-in 0.5, forwards);
+            .animation(fadeIn, 1s, .6s, ease-in 0.5, forwards);
             position: absolute;
             top: 0px;
-            right: 5px;
+            right: 0px;
           }
         }
         
@@ -235,7 +267,7 @@ html {
             transition: color 0.5s;
             position: absolute;
             top: 10px;
-            right: 10px;
+            right: 15px;
             z-index: 9001;
           }
           
@@ -300,15 +332,21 @@ html {
           @media (max-width: 450px) {
             top: 60px;
             width: 100%;
-            font-size: 40px;
+            font-size: 36px;
             left: initial;
             text-align: center;
+            font-size: 28px;
+            letter-spacing: 1px;
           }
           
           @media (min-width: 1000px) {
             top: 15px;
+            left: 0px;
+            padding-left: 10px;
             width: 100%;
             text-align: center;
+            font-size: 42px;
+            letter-spacing: 2px;
           }
 
           #design {
@@ -372,9 +410,11 @@ html {
     #about {
       margin: 0;
       width: 100%;
-      padding: 25px 20px;
+      padding: 20px 25px;
       text-align: center;
       background-color: darken(white, 5%);
+      overflow-x: hidden;
+      overflow-y: hidden;
       
       @media(max-width: 639px) {
         padding: 20px 10px;
@@ -387,6 +427,11 @@ html {
         h1 {
           .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
           color: @dark-orange;
+          
+          @media (max-width: 639px) {
+            font-size: 52px;
+            letter-spacing: 2px;
+          }
         }
       }
       
@@ -520,11 +565,17 @@ html {
     #organizations {
       margin: 0;
       width: 100%;
+      padding: 20px 25px;
       
       p {
         .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
         color: @vivid-orange;
         text-align: center;
+        
+        @media (max-width: 639px) {
+            font-size: 52px;
+            letter-spacing: 2px;
+        }
       }
     }
     
@@ -536,6 +587,11 @@ html {
         .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
         color: @vivid-orange;
         text-align: center;
+        
+        @media (max-width: 639px) {
+            font-size: 52px;
+            letter-spacing: 2px;
+          }
       }
     }
     
@@ -543,13 +599,20 @@ html {
     #hackathons {
       margin: 0;
       width: 100%;
-      padding: 25px 20px;
+      padding: 20px 25px;
       background-color: @smokier-white;
+      overflow-x: hidden;
+      overflow-y: hidden;
       
       p {
         .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
         color: @dark-yellow;
         text-align: center;
+        
+        @media (max-width: 639px) {
+            font-size: 52px;
+            letter-spacing: 2px;
+        }
       }
       
       .hackathon-row {
@@ -601,6 +664,11 @@ html {
         .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
         color: @vivid-yellow;
         text-align: center;
+        
+        @media (max-width: 639px) {
+            font-size: 52px;
+            letter-spacing: 2px;
+        }
       }
     }
   }
