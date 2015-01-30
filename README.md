@@ -9,19 +9,19 @@ Hey All!  This is the source code for my personal website!
 
 #Getting it running locally
 
-..*First, open up a terminal.
+* First, open up a terminal.
 
-..*Install Node.js, giving you Node Pacakage Manager.
+* Install Node.js, giving you Node Pacakage Manager.
 
-..*git clone this repo.
+* git clone this repo.
 
-..*Navigate into the directory and issue the following commands:
+* Navigate into the directory and issue the following commands:
 
-.....*npm install
-.....*bower install
-.....*gulp
+--1. npm install
+--2. bower install
+--3. gulp
 
-..*Go to localhost:300 and congratulations,  nothing that cool is happening!
+* Go to localhost:300 and congratulations,  nothing that cool is happening!
 
 Current Status
 --------------
