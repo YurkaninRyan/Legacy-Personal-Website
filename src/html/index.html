@@ -17,6 +17,8 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     
+    <script src="static/vendor/jquery/dist/jquery.min.js"></script>
+    
   </head>
   <body>
     <!--TODO: This section has to make them not want to leave pls-->
@@ -50,7 +52,7 @@
           <img src="static/img/leaf.png" id="leaf">
         </div>
         <div id="navdown">
-          <a href="/#about" id="navbutton">
+          <a href="#/about" id="navbutton" onclick="$('body').animate({scrollTop: $('#about').offset().top}, 1200);">
             <i class="fa fa-chevron-circle-down navb"></i>
           </a>
         </div>
@@ -101,17 +103,42 @@
       </div>
     </section>
     <!--TODO: This section will list groups of been apart of-->
-    <section id="organizations">
-      <p>This is some sample text</p>
+    <section id="projects">
+      <div id="projecttitle" class="wow fadeIn">
+        <p>What i'm doing.</p>
+      </div>
+      <div id="projectcontainer">
+        <div class="project-row row row-centered">
+          <div id="owlhacksweb" class="project col-xs-3 col-centered wow fadeInLeft">
+            <a href=""><img src="static/img/owlhacksweb.png"></a>
+          </div>
+          <div id="oproj" class="projinfo wow fadeInRight">
+          </div>
+        </div>
+        <div class="project-row row row-centered">
+          <div id="techprep" class="project col-xs-3 col-centered wow fadeInLeft">
+            <a href=""><img src="static/img/owlhacksweb.png"></a>
+          </div>
+          <div id="tproj" class="projinfo wow fadeInRight">
+          </div>
+        </div>
+        <div class="project-row row row-centered">
+          <div id="lucid" class="project col-xs-3 col-centered wow fadeInLeft">
+            <a href=""><img src="static/img/owlhacksweb.png"></a>
+          </div>
+          <div id="lproj" class="projinfo wow fadeInRight">
+          </div>
+        </div>
+      </div>
     </section>
     <!--TODO: This section will discuss projects I've done-->
-    <section id="projects">
-      <p>This is some sample text</p>
+    <section id="organizations">
+      <p>Groups i'm in.</p>
     </section>
     <!--TODO: This section will list all the hackathons I have attended, with the projects that I worked on-->
     <section id="hackathons">
       <div id="hackathontitle" class="wow fadeIn">
-        <p>Hackathons I've Attended</p>
+        <p>Hackathons i've attended.</p>
       </div>
       <div id="hackathoncontainer">
         <div class="hackathon-row row row-centered">
@@ -136,10 +163,9 @@
     </section>
     <!--TODO: This section does the obvious, duh.-->
     <section id="contact">
-      <p>This is some sample text</p>
+      <p>Let's talk.</p>
     </section>
   </body>
 </html>
-
 <script src="static/js/wow.js"></script>
 <script>new WOW().init();</script>

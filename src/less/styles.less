@@ -8,6 +8,7 @@
 @dark-yellow: darken(@vivid-yellow, 10%);
 @pennappsblue: #2daae0;
 @hackrpiblack: #343433;
+@seafoam: #65ae9a;
 
 //Mix-ins\\
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @direction: normal) {
@@ -146,6 +147,7 @@ html {
     height: 100%;
     margin: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     
     #splash {
       height: 100%;
@@ -178,6 +180,7 @@ html {
           right: 150px;
           padding-bottom: 10px;
           font-weight: 100;
+          -webkit-backface-visibility: hidden;
           
           @media (max-width: 999px) {
             right: 100px; 
@@ -415,6 +418,7 @@ html {
       background-color: darken(white, 5%);
       overflow-x: hidden;
       overflow-y: hidden;
+      -webkit-backface-visibility: hidden;
       
       @media(max-width: 639px) {
         padding: 20px 10px;
@@ -562,10 +566,106 @@ html {
       }
     }
     
-    #organizations {
+    #projects {
       margin: 0;
       width: 100%;
       padding: 20px 25px;
+      overflow-x: hidden;
+      
+      #projecttitle {
+        width: 100%;
+        margin-bottom: 50px;
+        
+        p {
+          .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
+          color: @vivid-orange;
+          text-align: center;
+
+          @media (max-width: 639px) {
+              font-size: 52px;
+              letter-spacing: 2px;
+          }
+        }
+      }
+      
+      #projectcontainer {
+        width: 100%;
+        
+        .project-row {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 30px;
+          
+          @media (max-width: 1200px) {
+            margin: 0;
+          }
+          
+          .project {
+            float: left;
+            margin-bottom: 20px;
+            height: 100%;
+            width: 45%;
+            
+            @media (max-width: 1200px) {
+              text-align: center;
+              min-width: initial;
+              width: 100%;
+              float: none;
+              margin-bottom: 0;
+              padding: 0;
+            }
+            
+            img {
+              max-width: 600px;
+              width: 100%;
+              .border-radius(10px, 10px, 100px, 10px);
+              min-width: 250px;
+              min-height: 250px;
+
+              @media (max-width: 1200px) {
+                text-align: center;
+                max-width: initial;
+                width: 100%;
+                float: none;
+                min-width: initial;
+                .border-radius(60px, 0px, 0px, 60px);
+              }
+            }
+          }
+          
+          .projinfo{
+            float: right;
+            min-width: 600px;
+            .border-radius(10px, 100px, 10px, 10px);
+            height: 250px;
+            
+            @media (max-width: 1200px) {
+              display: inline-block;
+              min-width: initial;
+              width: 100%;
+              float: none;
+              margin-bottom: 10px;
+              .border-radius(0px, 100px, 100px, 0px)
+            }
+          }
+          #oproj {
+               background-color: darken(@vivid-yellow, 11%);
+            }
+            
+            #tproj {
+               background-color: darken(@vivid-yellow, 5%);
+            }
+            
+            #lproj {
+               background-color: @vivid-yellow;
+            }
+        }
+      }
+    }
+    
+    #organizations {
+      margin: 0;
+      width: 100%;
       
       p {
         .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
@@ -576,22 +676,6 @@ html {
             font-size: 52px;
             letter-spacing: 2px;
         }
-      }
-    }
-    
-    #projects {
-      margin: 0;
-      width: 100%;
-      
-      p {
-        .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
-        color: @vivid-orange;
-        text-align: center;
-        
-        @media (max-width: 639px) {
-            font-size: 52px;
-            letter-spacing: 2px;
-          }
       }
     }
     
