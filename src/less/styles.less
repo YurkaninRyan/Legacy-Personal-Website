@@ -9,6 +9,8 @@
 @pennappsblue: #2daae0;
 @hackrpiblack: #343433;
 @seafoam: #65ae9a;
+@leafyellow: #fcc401;
+@lucid-blue: #2ac8d6;
 
 //Mix-ins\\
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @direction: normal) {
@@ -142,6 +144,10 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
+  
+  @media (max-width: 1400px) {
+    overflow: hidden;
+  }
   
   body {
     height: 100%;
@@ -571,6 +577,11 @@ html {
       width: 100%;
       padding: 20px 25px;
       overflow-x: hidden;
+      background-color: darken(@smoke-white, 5%);
+      
+      @media (max-width: 639px) {
+            padding: 20px 15px;
+      }
       
       #projecttitle {
         width: 100%;
@@ -597,7 +608,7 @@ html {
           margin-bottom: 30px;
           
           @media (max-width: 1200px) {
-            margin: 0;
+            margin: 0
           }
           
           .project {
@@ -621,6 +632,7 @@ html {
               .border-radius(10px, 10px, 100px, 10px);
               min-width: 250px;
               min-height: 250px;
+              max-height: 250px;
 
               @media (max-width: 1200px) {
                 text-align: center;
@@ -628,6 +640,7 @@ html {
                 width: 100%;
                 float: none;
                 min-width: initial;
+                min-height: 200px;
                 .border-radius(60px, 0px, 0px, 60px);
               }
             }
@@ -635,9 +648,14 @@ html {
           
           .projinfo{
             float: right;
+            width: 45%;
             min-width: 600px;
             .border-radius(10px, 100px, 10px, 10px);
             height: 250px;
+            .font(white, ~"'Open Sans Condensed', sans-serif", 26px, 200, 1px);
+            text-align: left;
+            padding: 20px 25px;
+            padding-top: 50px;
             
             @media (max-width: 1200px) {
               display: inline-block;
@@ -645,19 +663,23 @@ html {
               width: 100%;
               float: none;
               margin-bottom: 10px;
-              .border-radius(0px, 100px, 100px, 0px)
+              .border-radius(0px, 5px, 5px, 0px);
+              height: auto;
+              margin-bottom: 40px;
+              padding: 20px 25px;
             }
           }
           #oproj {
-               background-color: darken(@vivid-yellow, 11%);
+               background-color: darken(@leafyellow, 11%);
             }
             
             #tproj {
-               background-color: darken(@vivid-yellow, 5%);
+               background-color: darken(@leafyellow, 5%);
             }
             
             #lproj {
-               background-color: @vivid-yellow;
+               background-color: @leafyellow;
+               margin-bottom: 0;
             }
         }
       }
