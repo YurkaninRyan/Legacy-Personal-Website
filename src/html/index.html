@@ -52,7 +52,7 @@
           <img src="static/img/leaf.png" id="leaf">
         </div>
         <div id="navdown">
-          <a href="#/about" id="navbutton" onclick="$('body').animate({scrollTop: $('#about').offset().top}, 1200);">
+          <a href="#/about" id="navbutton" onclick="$('body,html').animate({scrollTop: $('#about').offset().top}, 1000);">
             <i class="fa fa-chevron-circle-down navb"></i>
           </a>
         </div>
@@ -136,7 +136,22 @@
     </section>
     <!--TODO: This section will discuss projects I've done-->
     <section id="organizations">
-      <p>Groups i'm in.</p>
+      <div id="orgtitle">
+        <p>Groups i'm in.</p>
+      </div>
+      <div id="orgcontainer">
+        <div class="org-row row row-centered">
+          <div id="acm" class="org col-xs-3 col-centered wow fadeInLeft">
+              <a><img src="static/img/acm.png"></a>
+          </div>
+          <div id="tudev" class="org col-xs-3 col-centered wow fadeInUp">
+              <a href="https://github.com/tudev"><img src="static/img/templedev.png"></a>
+          </div>
+          <div id="owlhacksorg" class="org col-xs-3 col-centered wow fadeInRight">
+              <a><img src="static/img/owlorg.png"></a>
+          </div>
+        </div>
+      </div>
     </section>
     <!--TODO: This section will list all the hackathons I have attended, with the projects that I worked on-->
     <section id="hackathons">
@@ -166,7 +181,9 @@
     </section>
     <!--TODO: This section does the obvious, duh.-->
     <section id="contact">
-      <p>Let's talk.</p>
+      <div id="contacttitle">
+        <p>Let's talk.</p>
+      </div>
     </section>
   </body>
 </html>

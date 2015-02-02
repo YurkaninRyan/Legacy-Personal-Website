@@ -11,6 +11,8 @@
 @seafoam: #65ae9a;
 @leafyellow: #fcc401;
 @lucid-blue: #2ac8d6;
+@temple-red: #9d1b33;
+@acm-red: #9c1933;
 
 //Mix-ins\\
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @direction: normal) {
@@ -97,6 +99,15 @@
   -moz-transform: 	  @string;
   -ms-transform: 	  @string;
   -o-transform: 	  @string;
+  transform:          @string;
+}
+
+.transition (@property @time) {
+  -webkit-transition: @property @time;
+  -moz-transition:    @property @time;
+  -o-transition:      @property @time;
+  -ms-transition:     @property @time;
+  transition:         @property @time;
 }
 
 //Keyframes\\
@@ -144,8 +155,9 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow-x: hidden;
   
-  @media (max-width: 1400px) {
+  @media (max-width: 1200px) {
     overflow: hidden;
   }
   
@@ -159,7 +171,7 @@ html {
       height: 100%;
       margin: 0;
       width: 100%;
-      overflow: hidden;
+      overflow-x: hidden;
       
       #splash-bg {
         background: url(../img/splash-bg.jpg);
@@ -273,7 +285,6 @@ html {
             color: white;
             vertical-align: top;
             text-decoration: none;
-            transition: color 0.5s;
             position: absolute;
             top: 10px;
             right: 15px;
@@ -293,12 +304,12 @@ html {
             }
 
             &:hover {
+              
               @media (min-width: 1000px) {
-                transition: 0.5s;
-                transition-duration: 2s;
                 color: @smoke-white;
                 text-decoration: none;
-                transform: rotateY(360deg);
+                .transition(transform, 2s);
+                .transform(rotateY(360deg));
               }
             } 
           } 
@@ -398,6 +409,16 @@ html {
             -webkit-animation-duration: 7s, 8s;
             -webkit-animation-fill-mode: both;
             -webkit-animation-timing-function: linear, ease-in-out;
+            -moz-transform-origin: 0px -400px 0px;
+            -moz-animation-name: fall, sway;
+            -moz-animation-duration: 7s, 8s;
+            -moz-animation-fill-mode: both;
+            -moz-animation-timing-function: linear, ease-in-out;
+            transform-origin: 0px -400px 0px;
+            animation-name: fall, sway;
+            animation-duration: 7s, 8s;
+            animation-fill-mode: both;
+            animation-timing-function: linear, ease-in-out;
             top: 35%; 
             left: 22%; 
             -webkit-animation-delay: 1.2s;
@@ -467,10 +488,8 @@ html {
           text-align: center;
           font-size: 40px;
           margin-bottom: 10px;
-          color: @vivid-orange !important;
           vertical-align: top;
           text-decoration: none;
-          transition: color 0.5s;
           position: relative;
           
           @media (max-width: 600px) {
@@ -498,13 +517,12 @@ html {
             margin-right: 20px;
             
             &:hover {
-              transition: 0.5s;
-              transition-duration: 2s;
-              color: darken(@vivid-orange, 30%);
               text-decoration: none;
               
               @media (min-width: 800px) {
-                transform: rotateY(360deg);
+                color: darken(orange, 10%);
+                .transition(transform, 2s);
+                .transform(rotateY(360deg));
               }
             } 
           }
@@ -602,13 +620,21 @@ html {
       #projectcontainer {
         width: 100%;
         
+        @media (min-width: 700px) {
+          padding: 0px 20%;
+        }
+        
+        @media (min-width: 1200px) {
+            padding: 0px 0px;
+          }
+        
         .project-row {
           width: 100%;
           text-align: center;
           margin-bottom: 30px;
           
           @media (max-width: 1200px) {
-            margin: 0
+            margin: 0;
           }
           
           .project {
@@ -627,12 +653,12 @@ html {
             }
             
             img {
-              max-width: 600px;
+              //max-width: 600px;
               width: 100%;
               .border-radius(10px, 10px, 100px, 10px);
               min-width: 250px;
               min-height: 250px;
-              max-height: 250px;
+              max-height: 300px;
 
               @media (max-width: 1200px) {
                 text-align: center;
@@ -640,7 +666,7 @@ html {
                 width: 100%;
                 float: none;
                 min-width: initial;
-                min-height: 200px;
+                min-height: 300px;
                 .border-radius(60px, 0px, 0px, 60px);
               }
             }
@@ -688,18 +714,73 @@ html {
     #organizations {
       margin: 0;
       width: 100%;
+      padding: 20px 25px;
+      background-color: @smokier-white;
+      overflow-x: hidden;
+      overflow-y: hidden;
       
-      p {
-        .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
-        color: @vivid-orange;
-        text-align: center;
+      #orgtitle {
+        margin-bottom: 50px;
         
-        @media (max-width: 639px) {
-            font-size: 52px;
-            letter-spacing: 2px;
+        p {
+          .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
+          color: @dark-yellow;
+          text-align: center;
+
+          @media (max-width: 639px) {
+              font-size: 52px;
+              letter-spacing: 2px;
+          }
+        }
+      }
+      #orgcontainer {
+        .org-row {
+          text-align: center;
+          width: 100%;
+          margin: 0;
+          
+          #owlhacksorg {
+            padding: 0px 0px;
+          }
+
+          .org {
+            display: inline-block;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+            .border-radius(15px, 10px, 10px, 15px);
+            max-width: 300px;
+            margin: 5px;
+
+            @media (max-width: 639px) {
+              margin-bottom: 20px;
+              margin-right: 0px;
+              margin-left: 0px;
+              margin-top: 0px;
+              max-width: 400px;
+            }
+
+            img {
+              width: 100%;
+              .border-radius(15px, 10px, 10px, 15px);
+            }
+          }
+
+          #acm {
+            background-color: @acm-red;
+          }
+
+          #tudev {
+            background-color: @temple-red; 
+          }
+          
+          #tudev {
+            .border-radius(15px, 10px, 10px, 15px);
+          }
         }
       }
     }
+      
     
     
     #hackathons {
@@ -710,17 +791,20 @@ html {
       overflow-x: hidden;
       overflow-y: hidden;
       
-      p {
-        .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
-        color: @dark-yellow;
-        text-align: center;
+      #hackathontitle { 
+         margin-bottom: 50px;
         
-        @media (max-width: 639px) {
-            font-size: 52px;
-            letter-spacing: 2px;
+        p {
+          .font(white, ~"'Open Sans Condensed', sans-serif", 64px, 300, 3px);
+          color: @dark-yellow;
+          text-align: center;
+
+          @media (max-width: 639px) {
+              font-size: 52px;
+              letter-spacing: 2px;
+          }
         }
       }
-      
       .hackathon-row {
         text-align: center;
         width: 100%;
