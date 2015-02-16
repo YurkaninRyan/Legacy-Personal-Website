@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.1",
-    "jquery-easing": "*"
+    "jquery-easing": "*",
+    "fontawesome": "~4.3.0"
   }
 }

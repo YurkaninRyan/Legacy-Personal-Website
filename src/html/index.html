@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
+  <head prefix="http://ryanyurkan.in/">
     <title>Ryan Yurkanin|Developer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,29 +17,29 @@
                                    understand">
     <meta name="twitter:creator" content="@yurkaninryan">
     <meta name="twitter:image" content="http://www.ryanyurkan.in/img/ogtwitter.jpg">
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Ryan Yurkanin|Developer" />
-    <meta property="og:title" content="Ryan Yurkanin|Developer" />
-    <meta property="og:url" content="ryanyurkan.in" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ryan Yurkanin|Developer">
+    <meta property="og:title" content="Ryan Yurkanin|Developer">
+    <meta property="og:url" content="ryanyurkan.in">
     <meta property="og:description" content="A place to build software that is fun to play with, 
                                    go places noone is allowed, and break things you don't 
-                                   understand" />
-    <meta property="og:image" content="http://www.ryanyurkan.in/img/ogfb.jpg" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="600" />
+                                   understand">
+    <meta property="og:image" content="http://www.ryanyurkan.in/img/ogfb.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="600">
       
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
     
     <script src="vendor/jquery/dist/jquery.min.js"></script>
     
   </head>
-  <body>
+  <body class="loading">
     <!--TODO: This section has to make them not want to leave pls-->
     <section id="splash">
       <div id="splash-bg">
@@ -48,17 +48,20 @@
         </div>
         <div id="bigscreensocial" class="row row-centered">
           <div id="bigsocialmedia">
+            <a href="./resume.pdf">
+              <i class="fa fa-file-text fa-3 zero"></i>
+            </a>
             <a href="http://www.github.com/yurkaninryan" id="github">
-              <i class="fa fa-github fa-lg one"></i>
+              <i class="fa fa-github fa-3 one"></i>
             </a>
             <a href="http://www.facebook.com/yurkaninryan">
-              <i class="fa fa-facebook-square fa-lg two"></i>
+              <i class="fa fa-facebook-square fa-3 two"></i>
             </a>
             <a href="http://www.linkedin.com/in/yurkaninryan">
-              <i class="fa fa-linkedin-square fa-lg three"></i>
+              <i class="fa fa-linkedin-square fa-3 three"></i>
             </a>
             <a href="http://www.twitter.com/yurkaninryan">
-              <i class="fa fa-twitter fa-lg four"></i>
+              <i class="fa fa-twitter fa-3 four"></i>
             </a>
           </div>
         </div>
@@ -88,6 +91,9 @@
         </div>
         <div id="blurb-row-2" class="row row-centered wow fadeInDown">
           <div id="socialmedia">
+            <a href="./resume.pdf">
+              <i class="fa fa-file-text fa-lg zero"></i>
+            </a>
             <a href="http://www.github.com/yurkaninryan" id="github">
               <i class="fa fa-github fa-lg"></i>
             </a>
@@ -98,7 +104,7 @@
               <i class="fa fa-linkedin-square fa-lg"></i>
             </a>
             <a href="http://www.twitter.com/yurkaninryan">
-              <i class="fa fa-twitter fa-lg"></i>
+              <i id="final" class="fa fa-twitter fa-lg"></i>
             </a>
           </div>
         </div>
@@ -183,15 +189,15 @@
       <div id="hackathoncontainer">
         <div class="hackathon-row row row-centered">
           <div id="pennapps" class="hackathon col-xs-3 col-centered wow fadeInRight">
-              <a href="/pennapps"><img src="img/pennapps.png"></a>
+              <a href="http://www.pennapps.com/"><img src="img/pennapps.png"></a>
           </div>
         </div>
         <div class="hackathon-row row row-centered">
           <div id="codeforgood" class="hackathon col-xs-3 col-centered wow fadeInLeft">
-              <a href="/codeforgood"><img src="img/jpmorgan.png"></a>
+              <a href="http://techcareers.jpmorgan.com/techcareers/us/opportunities/codeforgood"><img src="img/jpmorgan.png"></a>
           </div>
           <div id="hackrpi" class="hackathon col-xs-3 col-centered wow fadeInRight">
-              <a href="/hackrpi"><img src="img/hackrpi.png"></a>
+              <a href="http://www.hackrpi.com/"><img src="img/hackrpi.png"></a>
           </div>
         </div>
         <div class="hackathon-row row row-centered"></div>
@@ -201,13 +207,13 @@
         <div class="hackathon-row row row-centered"></div>
       </div>
     </section>
-    <!--TODO: This section does the obvious, duh.-->
-    <section id="contact">
-      <div id="contacttitle">
-        <p>Let's talk.</p>
-      </div>
-    </section>
+    <script>
+      setTimeout(function() {
+          $("body").removeClass("loading");
+          $("body").addClass("loaded");
+      }, 2000); 
+    </script>
+    <script src="js/wow.js"></script>
+    <script>new WOW().init();</script>
   </body>
 </html>
-<script src="js/wow.js"></script>
-<script>new WOW().init();</script>

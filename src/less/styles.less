@@ -161,7 +161,14 @@ html {
     overflow: hidden;
   }
   
-  body {
+  .loading {
+   display: none;
+   background-color: white !important;
+   z-index: 99999;
+   overflow: hidden;
+  }
+  
+  .loaded {
     height: 100%;
     margin: 0;
     width: 100%;
@@ -253,6 +260,11 @@ html {
         }
         
         #bigscreensocial {
+          .zero {
+            .opacity(0);
+            .animation(fadeIn, 1s, 2.5s, ease-in 1, forwards);
+          }
+          
           .one {
             .opacity(0);
             .animation(fadeIn, 1s, 2s, ease-in 1, forwards);
@@ -510,6 +522,10 @@ html {
           a {
             text-decoration: none !important;
           }
+          
+          #final {
+           margin-right: 0; 
+          }
 
           .fa {
             color: orange;
@@ -668,6 +684,10 @@ html {
                 min-width: initial;
                 min-height: 300px;
                 .border-radius(60px, 0px, 0px, 60px);
+              }
+              
+              @media (max-width: 300px) {
+                max-height: 100px; 
               }
             }
           }

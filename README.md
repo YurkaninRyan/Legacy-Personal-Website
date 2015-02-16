@@ -21,9 +21,4 @@ Hey All!  This is the source code for my personal website!
 --2. bower install
 --3. gulp
 
-* Go to localhost:300 and congratulations,  nothing that cool is happening!
-
-Current Status
---------------
-
-Express is all set up and ready to go.  Now that the splash page, hackathon section, and about section are all finished the only pages left to work on are the organization page, and the projects page.  oh god the project page.
+* Open Index.html and view it!
