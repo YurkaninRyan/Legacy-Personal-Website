@@ -161,14 +161,7 @@ html {
     overflow: hidden;
   }
   
-  .loading {
-   display: none;
-   background-color: white !important;
-   z-index: 99999;
-   overflow: hidden;
-  }
-  
-  .loaded {
+  body {
     height: 100%;
     margin: 0;
     width: 100%;
@@ -412,6 +405,10 @@ html {
           .perspective(1800px, center);
           top: 0;
           width: 100%;
+          transform: rotateZ(0.1);
+          transform: translateZ(0.1);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
           
           #leaf{
             position: absolute;
