@@ -13,6 +13,7 @@
 @lucid-blue: #2ac8d6;
 @temple-red: #9d1b33;
 @acm-red: #9c1933;
+@phillycodfest-blue: #273b5c;
 
 //Mix-ins\\
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @direction: normal) {
@@ -680,7 +681,7 @@ html {
                 float: none;
                 min-width: initial;
                 min-height: 300px;
-                .border-radius(60px, 0px, 0px, 60px);
+                .border-radius(60px, 0px, 0px, 0px);
               }
               
               @media (max-width: 300px) {
@@ -713,17 +714,21 @@ html {
             }
           }
           #oproj {
-               background-color: darken(@leafyellow, 11%);
-            }
+            background-color: darken(@leafyellow, 16%);
+          }
             
-            #tproj {
-               background-color: darken(@leafyellow, 5%);
-            }
+          #tproj {
+            background-color: darken(@leafyellow, 11%);
+          }
             
-            #lproj {
-               background-color: @leafyellow;
-               margin-bottom: 0;
-            }
+          #lproj {
+            background-color: darken(@leafyellow, 5%);
+          }
+          
+          #jproj{
+            background-color: @leafyellow;
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -859,7 +864,11 @@ html {
 
         #pennapps {
           background-color: darken(@pennappsblue, 20%);
-        }  
+        }
+        
+        #phillycodefest {
+          background-color: @phillycodfest-blue;
+        }
       }
     }
     
